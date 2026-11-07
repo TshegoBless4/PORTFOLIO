@@ -1,9 +1,15 @@
+<!-- ============================================ -->
+<!-- public/contact.html -->
+<!-- ============================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Tshegofatso Mokone - UI/UX Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -13,135 +19,133 @@
 <nav>
     <div class="container nav-container">
         <div class="logo">
-            <a href="/">TM</a>
+            <a href="/">TM<span>.</span></a>
         </div>
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
             <li><a href="/work">Work</a></li>
             <li><a href="/contact" class="active">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Toggle Navigation">
             <span></span><span></span><span></span>
         </div>
     </div>
 </nav>
 
-<section class="contact-section">
-    <div class="container">
-        <h1 class="page-title">Get In Touch</h1>
-        <p class="page-subtitle">Have a project in mind? Let's talk.</p>
-        
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h2>Let's connect</h2>
-                <p>I'm currently open to junior UI/UX roles, freelance projects, and collaboration opportunities.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <a href="mailto:Tshegofatsomokone316@gmail.com">Tshegofatsomokone316@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🐙</span>
-                        <a href="#" target="_blank">GitHub</a>
-                    </div>
-                </div>
+<main>
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Get in Touch</span>
+                <h1 class="page-title">Let's Connect</h1>
+                <p class="page-subtitle">Have an opportunity, project in mind, or want to collaborate? Send me a message below.</p>
             </div>
             
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="from_name" required>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Open for opportunities</h2>
+                    <p>I am currently open to Junior UI/UX roles, digital product design internships, freelance commissions, and interactive media collaborations.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">📧</span>
+                            <div>
+                                <span class="contact-label">Email Me</span>
+                                <a href="mailto:Tshegofatsomokone316@gmail.com">Tshegofatsomokone316@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">🐙</span>
+                            <div>
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/tshegobless4" target="_blank" rel="noopener noreferrer">github.com/tshegobless4</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="from_email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="btn-primary">Send Message</button>
-                    <p id="formStatus" class="form-status"></p>
-                </form>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="from_name" placeholder="e.g. Sarah Jenkins" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email Address</label>
+                            <input type="email" id="email" name="from_email" placeholder="sarah@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or role..." required></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn-primary full-width">Send Message</button>
+                        <p id="formStatus" class="form-status" aria-live="polite"></p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <footer>
-    <div class="container">
+    <div class="container footer-container">
         <p id="copyright"></p>
+        <div class="footer-links">
+            <a href="/work">Work</a>
+            <a href="/contact">Contact</a>
+        </div>
     </div>
 </footer>
 
 <script>
-    // ============================================
-    // EMAILJS CONTACT FORM
-    // ============================================
-    // 🔴 REPLACE THESE THREE VALUES with your actual keys from EmailJS:
-    const EMAILJS_PUBLIC_KEY = "Bf_BoJDSj6ZwSr78L";      // From Account → API Keys
-    const EMAILJS_SERVICE_ID = "service_us4eilv";      // From Email Services
-    const EMAILJS_TEMPLATE_ID = "template_c3w29gp";    // From Email Templates
+    const EMAILJS_PUBLIC_KEY = "Bf_BoJDSj6ZwSr78L";
+    const EMAILJS_SERVICE_ID = "service_us4eilv";
+    const EMAILJS_TEMPLATE_ID = "template_c3w29gp";
     
-    // Initialize EmailJS
-    emailjs.init({
-        publicKey: EMAILJS_PUBLIC_KEY,
-    });
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
     
-    // Get form elements
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const formStatus = document.getElementById('formStatus');
-    const copyrightYear = document.getElementById('copyright');
     
-    // Handle form submission
     if (form) {
         form.addEventListener('submit', async function(event) {
             event.preventDefault();
             
-            // Show loading state
             const originalButtonText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = 'Sending message...';
             submitBtn.disabled = true;
             formStatus.textContent = '';
             
             try {
-                // Send email via EmailJS
-                const response = await emailjs.sendForm(
+                await emailjs.sendForm(
                     EMAILJS_SERVICE_ID,
                     EMAILJS_TEMPLATE_ID,
                     this
                 );
                 
-                // Success!
                 formStatus.textContent = '✓ Message sent successfully! I will respond within 24 hours.';
-                formStatus.style.color = 'green';
+                formStatus.style.color = 'var(--success-color, #10b981)';
                 form.reset();
                 
             } catch (error) {
                 console.error('EmailJS Error:', error);
-                formStatus.textContent = '⚠️ Failed to send. Please email me directly: Tshegofatsomokone316@gmail.com';
-                formStatus.style.color = 'red';
+                formStatus.textContent = '⚠️ Failed to send. Please email me directly at Tshegofatsomokone316@gmail.com';
+                formStatus.style.color = 'var(--error-color, #ef4444)';
             } finally {
-                // Reset button
                 submitBtn.textContent = originalButtonText;
                 submitBtn.disabled = false;
             }
         });
     }
     
-    // Copyright year
-    if (copyrightYear) {
-        copyrightYear.innerHTML = `© ${new Date().getFullYear()} Tshegofatso Mokone | Designed with purpose`;
-    }
+    document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Tshegofatso Mokone. All rights reserved.`;
     
-    // Mobile hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
     }
